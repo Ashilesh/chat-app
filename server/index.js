@@ -56,7 +56,7 @@ io.sockets.on('connection', (socket) => {
         const user = getUser(socket.id);
 
         // send message to everyone except io socket i.e. server socket
-        io.sockets.to(user.room).emit('message', { user: user.name, text: message });
+        io.to(user.room).emit('message', { user: user.name, text: message });
         console.log(getUsersInRoom(user.room));
         callback();
     });
