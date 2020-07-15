@@ -16,10 +16,10 @@ const io = sockeio(server);
 
 io.sockets.on('connection', (socket) => {
 
-    socket.on('join', ({ name, room }, callback) => {
+    socket.on('join', ({ name, room }, callback) => { 
 
-        console.log(socket.id, name, room);
-        const { error, user } = addUser({ id: socket.id, name, room });
+        
+        const { error, user } = addUser({ id: socket.id, name, room }); 
 
         if (error) {
             return callback(error);
@@ -57,7 +57,7 @@ io.sockets.on('connection', (socket) => {
 
         // send message to everyone except io socket i.e. server socket
         io.to(user.room).emit('message', { user: user.name, text: message });
-        console.log(getUsersInRoom(user.room));
+        
         callback();
     });
  
