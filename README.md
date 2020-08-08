@@ -16,7 +16,7 @@ npm install
 
 # Run
 
-First go to `/server` folder and start server by `npm start` then go to `/client' folder and type `npm start`.
+First go to `/server` folder and start server by `npm start` then go to `/client` folder and type `npm start`.
 
 # Screenshot
 
